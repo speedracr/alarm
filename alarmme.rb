@@ -1,4 +1,8 @@
 require 'gosu'
+unless time = ARGV.first
+  puts "Please enter time in minutes."
+  time = gets.chomp
+end
 
 class Alarm
   def initialize(time)
@@ -12,3 +16,5 @@ class Alarm
     @sound.play
   end
 end
+
+Alarm.new time.to_i
